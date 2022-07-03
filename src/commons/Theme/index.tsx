@@ -11,6 +11,7 @@ const palette = {
 
   black: '#0B0B0B',
   white: '#F0F2F3',
+  grey: '#ACACAC',
 };
 
 const theme = createTheme({
@@ -18,6 +19,7 @@ const theme = createTheme({
     mainBackground: palette.white,
     cardPrimaryBackground: palette.purplePrimary,
     black: palette.black,
+    grey0: palette.grey,
   },
   spacing: {
     s: 8,

@@ -3,9 +3,22 @@ import {Image, TouchableOpacity} from 'react-native';
 import {IReddit} from '../../../api/RedditApi';
 import {Box, Text} from '../../../components';
 
-export const ItemReddit = ({item}: {item: IReddit}) => (
-  <TouchableOpacity activeOpacity={0.7}>
-    <Box key={item.id} flexDirection="row">
+export const ItemReddit = ({
+  item,
+  onPress,
+}: {
+  item: IReddit;
+  onPress: () => void;
+}) => (
+  <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
+    <Box
+      key={item.id}
+      flexDirection="row"
+      borderBottomColor="grey0"
+      borderBottomWidth={0.6}
+      mx="s"
+      pb="s"
+      mb="s">
       <Box>
         <Image
           resizeMode="cover"
@@ -14,7 +27,7 @@ export const ItemReddit = ({item}: {item: IReddit}) => (
           source={{uri: item.thumbnail}}
         />
       </Box>
-      <Box flex={1} mx="m" mt="m">
+      <Box flex={1} ml="m" mt="m">
         <Text variant="label" textAlign="right">
           {new Date(item.created_utc).toUTCString()}
         </Text>
